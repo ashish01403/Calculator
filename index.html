@@ -64,38 +64,7 @@
             <!-- =============== Number =============== -->
         </div>
     </div>
+    <script src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
-<script>
-    'use strict'
-    var textcontainer = document.querySelector('.input');
-    var textcontainerans = document.querySelector('.answer');
-    var allkeys = document.querySelectorAll('.keys');
-    var string = '';
-    Array.from(allkeys).forEach((button)=>{
-        button.addEventListener('click',(e)=>{
-            if(e.target.innerHTML == '='){
-                string = eval(string);
-                // console.log(string); 
-                textcontainerans.value = string;
-            }
-            else if(e.target.innerHTML == 'AC'){
-                string = "";
-                textcontainer.value =string;
-                textcontainerans.value = string;
-            }
-            else if(e.target.innerHTML == 'DEL'){
-                // console.log("test");
-                string = string.substring(0,string.length-1);
-                // console.log(string);
-                textcontainer.value = string;
-            }
-            else{
-                string = string+e.target.innerHTML;
-                textcontainer.value = string;
-            }
-        });
-    });
-
-</script>
